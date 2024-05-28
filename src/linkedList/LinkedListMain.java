@@ -12,5 +12,11 @@ public class LinkedListMain {
         System.err.println("length " + newLinkedList.getLength());
 
         newLinkedList.print();
+
+        // append new node
+
+        newLinkedList.append(2);
+
+        newLinkedList.print();
     }
 }
