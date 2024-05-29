@@ -87,4 +87,42 @@ public class LinkedList {
         }
         length++;
     }
+
+    /*
+    * Remove node form last of the LinkedList
+            Steps to be followed to remove the element from the last
+    * first traverse linkedList to the second last element
+    * the assign tail to the  second last element and second last next to null
+    * */
+
+    public Node removeLast() {
+        //if length of linkedList is 0 return null
+        if (length == 0) return null;
+
+        // take two pointer one take care for current element other take care of previous element
+        Node current = head;
+        Node prev = head;
+
+        // iterate till the last of node of linkedList
+        while (current.next != null) {
+            prev = current;
+            current = current.next;
+        }
+        // assign tail to previous node
+        tail = prev;
+
+        // pint previous  to null
+        prev.next = null;
+
+        // decrease the length by 1
+        length--;
+
+        // if length become 0 then point head and tail to null
+        if (length == 0) {
+            head = null;
+            tail = null;
+        }
+        // return current element
+        return current;
+    }
 }
